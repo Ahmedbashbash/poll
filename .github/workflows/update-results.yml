@@ -26,4 +26,5 @@ jobs:
           git add poll-results.txt
           git commit -m "Update poll results"
           git push
+          
         shell: bash
