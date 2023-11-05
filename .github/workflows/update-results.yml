@@ -14,7 +14,7 @@ jobs:
 
       - name: Update Poll Results
         run: |
-          # Your script to update the poll-results.txt file goes here
+          # Your script to update the poll-results.txt file goes
           echo "Results: $(date)" >> poll-results.txt
         shell: bash
 
@@ -26,5 +26,5 @@ jobs:
           git add poll-results.txt
           git commit -m "Update poll results"
           git push
-          
+
         shell: bash
