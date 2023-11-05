@@ -1,0 +1,28 @@
+name: Update Poll Results
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-results:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Update Poll Results
+        run: |
+          # Your script to update the poll-results.txt file goes here
+          echo "Results: $(date)" >> poll-results.txt
+        shell: bash
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add poll-results.txt
+          git commit -m "Update poll results"
+          git push
+        shell: bash
