@@ -25,6 +25,8 @@ jobs:
         
           git add poll-results.txt
           git commit -m "Update poll results"
-          git push
+          git push https://github.com/Ahmedbashbash/poll.git HEAD:main
+          # Use the secret GH_TOKEN for authentication
+          git push https://${{ secrets.GH_TOKEN }}@github.com/Ahmedbashbash/poll.git HEAD:main
 
         shell: bash
